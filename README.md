@@ -45,6 +45,9 @@ npm Install
 
 npm run
 
+ ## 🚀 Live Demo
+
+Check out the live project here: [SwiggyClone on Netlify](https://dynamic-puffpuff-ae8c1f.netlify.app/)
 
 ##Usage
 
