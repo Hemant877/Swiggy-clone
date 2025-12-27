@@ -12,7 +12,7 @@ export default function Restaurant(){
             //  const response= await fetch(proxy+swiggyAPI)
             //  const data= await response.json()
             const response = await fetch("/.netlify/functions/swiggy");
-            const data = await res.json();
+            const data = await response.json();
             setRestData(data.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);
         }
         fetchData();
