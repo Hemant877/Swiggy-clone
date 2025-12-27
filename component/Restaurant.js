@@ -7,10 +7,12 @@ export default function Restaurant(){
 
        useEffect(()=>{
          async function fetchData() {
-            const proxy = "https://cors-anywhere.herokuapp.com/";
-            const swiggyAPI = `https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.076090&lng=72.877426&is-seo-homepage-enabled=true`;
-             const response= await fetch(proxy+swiggyAPI)
-             const data= await response.json()
+            // const proxy = "https://cors-anywhere.herokuapp.com/";
+            // const swiggyAPI = `https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.076090&lng=72.877426&is-seo-homepage-enabled=true`;
+            //  const response= await fetch(proxy+swiggyAPI)
+            //  const data= await response.json()
+            const response = await fetch("/.netlify/functions/swiggy");
+            const data = await res.json();
             setRestData(data.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);
         }
         fetchData();
