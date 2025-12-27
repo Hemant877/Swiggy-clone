@@ -16,7 +16,10 @@ export default function RestaurantMenuShimmer() {
   useEffect(() => {
     async function fetchData() {
       setLoading(true);
-        const response = await fetch(`/.netlify/functions/menu?id=${id}`);
+        const proxyServer = "https://cors-anywhere.herokuapp.com/";
+      const swiggyAPI = `https://www.swiggy.com/mapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.7040592&lng=77.10249019999999&restaurantId=${id}`;
+      const response = await fetch(proxyServer + swiggyAPI);
+      //   const response = await fetch(`/.netlify/functions/menu?id=${id}`);
       const data = await response.json();
       const tempData =
         data?.data?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards;
