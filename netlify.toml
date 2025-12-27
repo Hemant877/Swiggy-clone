@@ -1,8 +1,9 @@
 [build]
   command = "npm install && npm run build"
-  publish = "swiggy/build"
+  publish = "build"
 
 [functions]
   node_bundler = "esbuild"
+
 
 
