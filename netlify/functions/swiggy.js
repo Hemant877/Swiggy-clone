@@ -9,7 +9,7 @@ export async function handler() {
       },
     });
 
-    const data = await response.text();
+    const data = await response.json();
 
     return {
       statusCode: 200,
