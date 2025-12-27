@@ -1,15 +1,23 @@
-export async function handler() {
-  const url =
-    "https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.076090&lng=72.877426&is-seo-homepage-enabled=true";
+// netlify/functions/menu.js
+export async function handler(event, context) {
+  const restaurantId = event.queryStringParameters.id;
+  const url = `https://www.swiggy.com/mapi/menu/pl?page-type=REGULAR_MENU&restaurantId=${restaurantId}`;
 
   try {
-    const response = await fetch(url, {
+    const res = await fetch(url, {
       headers: {
         "User-Agent": "Mozilla/5.0",
       },
     });
 
-    const data = await response.json();
+    if (!res.ok) {
+      return {
+        statusCode: res.status,
+        body: JSON.stringify({ error: res.statusText }),
+      };
+    }
+
+    const data = await res.json();
 
     return {
       statusCode: 200,
@@ -17,7 +25,7 @@ export async function handler() {
         "Access-Control-Allow-Origin": "*",
         "Content-Type": "application/json",
       },
-      body: data,
+      body: JSON.stringify(data), // ✅ must stringify
     };
   } catch (error) {
     return {
