@@ -17,7 +17,7 @@ export async function handler(event, context) {
       };
     }
 
-    const data = await res.json();
+    const data = await res.text();
 
     return {
       statusCode: 200,
