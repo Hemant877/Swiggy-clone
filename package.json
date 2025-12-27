@@ -1,0 +1,30 @@
+{
+  "name": "percel",
+  "version": "1.0.0",
+  "description": "learning",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html --out-dir build --public-url ./"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "parcel": "^2.15.4",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.16"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^2.9.0",
+    "@tailwindcss/postcss": "^4.1.12",
+    "framer-motion": "^12.23.24",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "react-icons": "^5.5.0",
+    "react-redux": "^9.2.0",
+    "react-router": "^7.8.0",
+    "react-router-dom": "^7.8.2",
+    "react-toastify": "^11.0.5"
+  }
+}
